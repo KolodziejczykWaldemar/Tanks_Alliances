@@ -128,9 +128,6 @@ class MainWindow(QMainWindow):
         else:
             self.setWindowTitle(' ')
 
-        if self.cb.isChecked():
-            print('elo')
-
     def clickMethodAllie(self):
 
         print('test: ' + self.country_name.text())
@@ -180,9 +177,9 @@ class MainWindow(QMainWindow):
 
     def clickMethodCountry(self):
 
-        print('siemka: ' + self.country_name.text())
-        print('siemka: ' + self.year_val.text())
-        print('siemka: ' + self.combo.currentText())
+        print('test: ' + self.country_name.text())
+        print('test: ' + self.year_val.text())
+        print('test: ' + self.combo.currentText())
 
         if self.country_name.text():
             try:
