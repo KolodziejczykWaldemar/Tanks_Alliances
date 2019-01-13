@@ -112,10 +112,10 @@ class MainWindow(QMainWindow):
         self.but_countries_for_tanks.resize(150, 32)
         self.but_countries_for_tanks.move(780, 160)
 
-        self.btn = QPushButton('Click me!', self)
-        self.btn.clicked.connect(self.onClick)
-        self.btn.resize(150, 32)
-        self.btn.move(500, 500)
+        # self.btn = QPushButton('Try me!', self)
+        # self.btn.clicked.connect(self.onClick)
+        # self.btn.resize(150, 32)
+        # self.btn.move(500, 500)
 
     def onClick(self):
         self.SW = SecondWindow()
@@ -212,9 +212,17 @@ class SecondWindow(QMainWindow):
     def __init__(self):
         super(SecondWindow, self).__init__()
         self.setMinimumSize(QSize(750, 340))
+
+        oImage = QImage("tank_gif.gif")
+        sImage = oImage.scaled(QSize(750, 340))  # resize Image to widgets size
+        palette = QPalette()
+        palette.setBrush(10, QBrush(sImage))  # 10 = Windowrole
+        self.setPalette(palette)
+
         self.country_label = QLabel(self)
         self.country_label.setText('Country name:')
         self.country_label.move(370, 120)
+
 
 
 if __name__ == "__main__":
